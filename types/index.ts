@@ -29,9 +29,8 @@ export interface CartItem extends Product {
 
 export interface Storage {
   id: string
-
   name: string
-  timestamp?: Timestamp
+  timestamp?: string
 }
 
 export interface Order {

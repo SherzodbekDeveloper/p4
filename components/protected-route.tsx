@@ -1,4 +1,3 @@
-// components/protected-route.tsx
 "use client"
 
 import { useAuth } from "@/context/auth-context"

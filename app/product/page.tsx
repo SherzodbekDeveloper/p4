@@ -76,7 +76,7 @@ export default function ProductsPage() {
           ({
             id: doc.id,
             ...doc.data(),
-          } as Storage) // 🔑 shu joyda tipga cast qilamiz
+          } as Storage) 
       )
       setStorages(list)
     }

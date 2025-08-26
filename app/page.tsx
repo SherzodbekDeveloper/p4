@@ -15,7 +15,6 @@ import { calculateOrderTotal, calculateTaxes, generateOrderId } from "@/utils/or
 export default function POSSystem() {
   const { user, loading: authLoading } = useAuth()
 
-  // State management
   const [products, setProducts] = useState<Product[]>([])
   const [cartItems, setCartItems] = useState<CartItem[]>([])
   const [storages, setStorages] = useState<Storage[]>([])
@@ -24,7 +23,6 @@ export default function POSSystem() {
   const [loading, setLoading] = useState(true)
   const [isProcessing, setIsProcessing] = useState(false)
 
-  // Real-time storages subscription
   useEffect(() => {
     if (!user?.uid) {
       setStorages([])
@@ -42,7 +40,6 @@ export default function POSSystem() {
 
         setStorages(storageList)
 
-        // Auto-select first warehouse if none selected
         if (storageList.length > 0 && !selectedWarehouse) {
           setSelectedWarehouse(storageList[0].id)
         }

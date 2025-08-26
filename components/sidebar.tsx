@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Home, Package, Settings, Users, FileText, Menu, X, LogOut } from "lucide-react"
+import { Home, Package, Settings, Users, FileText, Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth"
 import { doc, getDoc } from "firebase/firestore"
@@ -47,8 +47,8 @@ export function Sidebar() {
   const handleLogout = async () => {
     const auth = getAuth()
     await signOut(auth)
-    Cookies.remove("firebaseToken") // cookie token ham o‘chadi
-    router.push("/auth") // Auth sahifasiga qaytaramiz
+    Cookies.remove("firebaseToken") 
+    router.push("/auth") 
   }
 
   return (
@@ -56,7 +56,6 @@ export function Sidebar() {
       className={cn("bg-gray-200 text-white transition-all duration-300 ease-in-out", isCollapsed ? "w-16" : "w-64")}
     >
       <div className="flex h-full flex-col">
-        {/* Logo & Collapse Button */}
         <div className="flex h-16 items-center justify-between px-4 border-b border-gray-300 p-2 ">
           {!isCollapsed && <img src="/logo.png" alt="Logo" width={100} height={100} />}
           <Button

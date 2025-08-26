@@ -3,7 +3,6 @@
 import { useMemo } from "react"
 import { Button } from "@/components/ui/button"
 import { Trash2, Minus, Plus } from "lucide-react"
-import Image from "next/image"
 import { formatCurrency } from "@/utils/orderUtils"
 import type { CartItem } from "@/types"
 

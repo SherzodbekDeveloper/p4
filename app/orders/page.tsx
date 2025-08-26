@@ -129,7 +129,6 @@ export default function EnhancedOrdersReport() {
   }, [orders, searchTerm, statusFilter, orderTypeFilter, dateFilter])
 
   const totalRevenue = filteredOrders.reduce((sum, o) => sum + o.total, 0)
-  const totalDiscounts = filteredOrders.reduce((sum, o) => sum + o.discount, 0)
   const averageOrderValue = filteredOrders.length ? totalRevenue / filteredOrders.length : 0
   const totalItems = filteredOrders.reduce(
     (sum, o) => sum + o.items.reduce((s, i) => s + i.quantity, 0),
