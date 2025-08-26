@@ -40,9 +40,7 @@ export default function ProductsPage() {
     star: false,
   })
 
-  if (!user) {
-    router.push('/auth')
-  }
+  
   const addStorage = async () => {
     if (!newStorageName.trim()) {
       toast.error("Ombor nomini kiriting")
@@ -164,11 +162,11 @@ export default function ProductsPage() {
         {storages.length === 0 ? (
           <Dialog open={isStorageModalOpen} onOpenChange={setIsStorageModalOpen}>
             <DialogTrigger asChild>
-              <Button variant="default">Ombor qo‘shish</Button>
+              <Button variant="default">Ombor qo&apos;shish</Button>
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Yangi ombor qo‘shish</DialogTitle>
+                <DialogTitle>Yangi ombor qo&apos;shish</DialogTitle>
               </DialogHeader>
               <Input
                 placeholder="Ombor nomi"
@@ -177,7 +175,7 @@ export default function ProductsPage() {
               />
               <DialogFooter>
                 <Button variant="secondary" onClick={() => setIsStorageModalOpen(false)}>Bekor qilish</Button>
-                <Button onClick={addStorage}>Qo‘shish</Button>
+                <Button onClick={addStorage}>Qo&apos;shish</Button>
               </DialogFooter>
             </DialogContent>
           </Dialog>
@@ -337,7 +335,7 @@ export default function ProductsPage() {
         </label>
 
         <label>
-          Ikkinchi o‘lchov qiymati
+          Ikkinchi o&apos;lchov qiymati
           <input
             type="number"
             name="secondMeasureValue"
@@ -371,15 +369,15 @@ export default function ProductsPage() {
           onClick={addProduct}
           className="bg-blue-600 text-white p-2 rounded col-span-2"
         >
-          Qo‘shish
+          Qo&apos;shish
         </button>
       </div>
 
-      {/* Mahsulotlar ro‘yxati */}
+
       {loading ? (
         <p>Yuklanmoqda...</p>
       ) : products.length === 0 ? (
-        <p>Mahsulot yo‘q</p>
+        <p>Mahsulot yo&apos;q</p>
       ) : (
         <div className="space-y-2">
           {products.map((p) => (
@@ -390,7 +388,7 @@ export default function ProductsPage() {
               <div>
                 <p className="font-bold">{p.ProductName}</p>
                 <p className="text-sm text-gray-600">
-                  {p.ProductSellPrice} so‘m ({p.quantity} dona)
+                  {p.ProductSellPrice} so&apos;m ({p.quantity} dona)
                 </p>
               </div>
               <p>{p.category}</p>

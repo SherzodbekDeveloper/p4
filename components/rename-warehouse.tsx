@@ -45,7 +45,7 @@ export function RenameWarehouseDialog({ open, onOpenChange, warehouseId, warehou
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <Pencil className="h-5 w-5" /> Ombor nomini o‘zgartirish
+            <Pencil className="h-5 w-5" /> Ombor nomini o&apos;zgartirish
           </DialogTitle>
         </DialogHeader>
         <div className="py-4 space-y-2">

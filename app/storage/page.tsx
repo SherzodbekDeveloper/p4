@@ -375,7 +375,7 @@ export default function EnhancedStoragePage() {
                           setRenameOpen(true)
                         }}
                       >
-                        <Pencil className="h-4 w-4 mr-2" /> Nomini o‘zgartirish
+                        <Pencil className="h-4 w-4 mr-2" /> Nomini o&apos;zgartirish
                       </DropdownMenuItem>
                       <DropdownMenuItem
                         onClick={(e) => {
@@ -385,7 +385,7 @@ export default function EnhancedStoragePage() {
                         }}
                         className="text-red-600"
                       >
-                        <Trash2 className="h-4 w-4 mr-2" /> O‘chirish
+                        <Trash2 className="h-4 w-4 mr-2" /> O&apos;chirish
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>

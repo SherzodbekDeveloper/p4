@@ -44,7 +44,7 @@ export function DeleteWarehouseDialog({ open, onOpenChange, warehouseId, warehou
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 text-red-600">
             <AlertTriangle className="h-5 w-5" />
-            Omborni o‘chirish
+            Omborni o&apos;chirish
           </DialogTitle>
         </DialogHeader>
 
@@ -52,7 +52,7 @@ export function DeleteWarehouseDialog({ open, onOpenChange, warehouseId, warehou
           <p className="text-sm text-gray-700">
             <span className="font-semibold">"{warehouseName}"</span> omborini o‘chirmoqchimisiz?  
             <br />
-            Bu amalni qaytarib bo‘lmaydi.
+            Bu amalni qaytarib bo&apos;lmaydi.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export function DeleteWarehouseDialog({ open, onOpenChange, warehouseId, warehou
             ) : (
               <span className="flex items-center gap-2">
                 <Trash2 className="h-4 w-4" />
-                O‘chirish
+                O&apos;chirish
               </span>
             )}
           </Button>
