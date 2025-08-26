@@ -69,7 +69,7 @@ export default function EnhancedStoragePage() {
       (querySnapshot) => {
         const storageList = querySnapshot.docs.map((doc) => ({
           id: doc.id,
-          ...(doc.data() as { name: string; timestamp?: any }),
+          ...(doc.data() as { name: string; timestamp?: string }),
         }))
         setStorages(storageList)
         if (storageList.length > 0 && !selectedStorage) {
@@ -336,7 +336,7 @@ export default function EnhancedStoragePage() {
                   <Warehouse className="h-5 w-5" /> Omborlar
                 </CardTitle>
                 <Button size="sm" onClick={() => setIsStorageModalOpen(true)}>
-                  Qo'shish
+                  Qo&apos;shish
                 </Button>
               </div>
             </CardHeader>
@@ -429,10 +429,10 @@ export default function EnhancedStoragePage() {
                     <SelectValue placeholder="Saralash" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="name">Nom bo'yicha</SelectItem>
-                    <SelectItem value="quantity">Miqdor bo'yicha</SelectItem>
-                    <SelectItem value="price">Tannarx bo'yicha</SelectItem>
-                    <SelectItem value="sellPrice">Sotuv narxi bo'yicha</SelectItem>
+                    <SelectItem value="name">Nom bo&apos;yicha</SelectItem>
+                    <SelectItem value="quantity">Miqdor bo&apos;yicha</SelectItem>
+                    <SelectItem value="price">Tannarx bo&apos;yicha</SelectItem>
+                    <SelectItem value="sellPrice">Sotuv narxi bo&apos;yicha</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

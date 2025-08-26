@@ -7,14 +7,15 @@ import { toast } from "sonner"
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { useAuth } from "@/context/auth-context"   
+import { useAuth } from "@/context/auth-context"
 import { useRouter } from 'next/navigation'
+import { Product, Storage } from '@/types'
 
 export default function ProductsPage() {
-  const { user, loading } = useAuth()   
-  const [storages, setStorages] = useState<any[]>([])
+  const { user, loading } = useAuth()
+  const [storages, setStorages] = useState<Storage[]>([])
   const [selectedStorage, setSelectedStorage] = useState("")
-  const [products, setProducts] = useState<any[]>([])
+  const [products, setProducts] = useState<Product[]>([])
   const [isStorageModalOpen, setIsStorageModalOpen] = useState(false)
   const [newStorageName, setNewStorageName] = useState("")
   const router = useRouter()
@@ -39,7 +40,7 @@ export default function ProductsPage() {
     star: false,
   })
 
-  if(!user){
+  if (!user) {
     router.push('/auth')
   }
   const addStorage = async () => {
@@ -66,28 +67,42 @@ export default function ProductsPage() {
   }
 
   useEffect(() => {
-    if (!user) return
-    const unsub = onSnapshot(
-      collection(db, "users", user.uid, "storage"),
-      (snapshot) => {
-        const list = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-        setStorages(list)
-      }
-    )
-    return () => unsub()
-  }, [user])
+  if (!user) return
+  const unsub = onSnapshot(
+    collection(db, "users", user.uid, "storage"),
+    (snapshot) => {
+      const list = snapshot.docs.map(
+        (doc) =>
+          ({
+            id: doc.id,
+            ...doc.data(),
+          } as Storage) // 🔑 shu joyda tipga cast qilamiz
+      )
+      setStorages(list)
+    }
+  )
+  return () => unsub()
+}, [user])
+
 
   useEffect(() => {
     if (!user || !selectedStorage) return
     const unsub = onSnapshot(
       collection(db, "users", user.uid, "storage", selectedStorage, "stock"),
       (snapshot) => {
-        const list = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        const list = snapshot.docs.map(
+          (doc) =>
+          ({
+            id: doc.id,
+            ...doc.data(),
+          } as Product)
+        )
         setProducts(list)
       }
     )
     return () => unsub()
   }, [user, selectedStorage])
+
 
   const addProduct = async () => {
     if (!form.ProductName.trim()) {
@@ -127,8 +142,8 @@ export default function ProductsPage() {
         type === "number"
           ? Number(value)
           : type === "checkbox"
-          ? checked
-          : value,
+            ? checked
+            : value,
     }))
   }
 
@@ -136,7 +151,7 @@ export default function ProductsPage() {
   if (!user) return <p className="text-red-500">Iltimos, tizimga kiring</p>
 
 
-  
+
 
 
   return (

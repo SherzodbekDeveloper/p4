@@ -19,8 +19,9 @@ export interface Product {
   barcode: number
   star: boolean
   prefixTime: number
-  timestamp: Date
+  timestamp: Timestamp
 }
+
 
 export interface CartItem extends Product {
   quantity: number
@@ -28,11 +29,12 @@ export interface CartItem extends Product {
 
 export interface Storage {
   id: string
+
   name: string
-  timestamp?: any
+  timestamp?: Timestamp
 }
 
-export interface Order  {
+export interface Order {
   id: string
   items: OrderItem[]
   subtotal: number
@@ -54,7 +56,7 @@ export interface UserData {
   email: string
   phone: string
   currency: string
-  createdAt: any
+  createdAt: string
 }
 
 export interface User {

@@ -42,7 +42,7 @@ export function WarehouseSelector({
             <SelectItem value="__new__" className="text-green-600 font-medium">
               <div className="flex items-center gap-2">
                 <Plus className="w-4 h-4" />
-                Yangi ombor qo'shish
+                Yangi ombor qo&apos;shish
               </div>
             </SelectItem>
           </SelectContent>

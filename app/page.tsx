@@ -154,7 +154,7 @@ export default function POSSystem() {
 
   const confirmPayment = useCallback(async () => {
     if (!user?.uid || !selectedWarehouse || cartItems.length === 0) {
-      toast.error("To'lovni amalga oshirish uchun barcha ma'lumotlar to'ldirilishi kerak")
+      toast.error("To’lovni amalga oshirish uchun barcha ma’lumotlar to’ldirilishi kerak")
       return
     }
 

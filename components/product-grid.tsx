@@ -52,7 +52,7 @@ export function ProductGrid({ products = [], loading, onAddToCart }: ProductGrid
         </svg>
       </div>
       <p className="text-gray-500 font-medium">Mahsulotlar topilmadi</p>
-      <p className="text-gray-400 text-sm mt-1">Ombor tanlangan bo'lsa ham mahsulotlar yo'q</p>
+      <p className="text-gray-400 text-sm mt-1">Ombor tanlangan bo&apos;lsa ham mahsulotlar yo&apos;q</p>
     </div>
   )
 

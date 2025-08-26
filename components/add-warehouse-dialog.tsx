@@ -77,7 +77,7 @@ export function AddWarehouseDialog({ open, onOpenChange }: AddWarehouseDialogPro
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Warehouse className="h-5 w-5" />
-            Yangi ombor qo'shish
+            Yangi ombor qo&apos;shish
           </DialogTitle>
         </DialogHeader>
 

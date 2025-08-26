@@ -58,7 +58,7 @@ export default function EnhancedOrdersReport() {
       q,
       (snap) => {
         const list: Order[] = snap.docs.map((d) => {
-          const data = d.data() as any
+          const data = d.data() as Order
           return {
             id: d.id,
             items: data.items || [],
@@ -67,7 +67,6 @@ export default function EnhancedOrdersReport() {
             discount: Number(data.discount) || 0,
             total: Number(data.total) || 0,
             orderType: data.orderType || "takeaway",
-            table: data.table || "",
             status: data.status || "pending",
             timestamp: data.timestamp || Timestamp.now(),
           }
@@ -173,7 +172,7 @@ export default function EnhancedOrdersReport() {
 
   const exportToCSV = () => {
     const headers = [
-      "Order ID", "Date", "Table", "Order Type", "Items Count", "Subtotal", "Taxes", "Discount", "Total", "Status",
+      "Order ID", "Date", "Order Type", "Items Count", "Subtotal", "Taxes", "Discount", "Total", "Status",
     ]
     const csv = [
       headers.join(","),
@@ -280,7 +279,7 @@ export default function EnhancedOrdersReport() {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-2xl font-bold text-green-600">{totalRevenue.toLocaleString()} so'm</div>
+                      <div className="text-2xl font-bold text-green-600">{totalRevenue.toLocaleString()} so&apos;m</div>
                       <p className="text-sm text-slate-600">Umumiy tushum</p>
                     </div>
                     <div className="h-12 w-12 bg-green-100 rounded-lg flex items-center justify-center">
@@ -294,8 +293,8 @@ export default function EnhancedOrdersReport() {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-2xl font-bold text-purple-600">{averageOrderValue.toLocaleString()} so'm</div>
-                      <p className="text-sm text-slate-600">O‘rtacha buyurtma qiymati</p>
+                      <div className="text-2xl font-bold text-purple-600">{averageOrderValue.toLocaleString()} so&apos;m</div>
+                      <p className="text-sm text-slate-600">O&apos;rtacha buyurtma qiymati</p>
                     </div>
                     <div className="h-12 w-12 bg-purple-100 rounded-lg flex items-center justify-center">
                       <TrendingUp className="h-6 w-6 text-purple-600" />
@@ -319,7 +318,7 @@ export default function EnhancedOrdersReport() {
               </Card>
             </div>
 
-            {/* Qidiruv va filterlar */}
+           
             <Card className="shadow-sm border-0 bg-white/80 backdrop-blur-sm">
               <CardContent className="p-6">
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -339,7 +338,7 @@ export default function EnhancedOrdersReport() {
                     <SelectContent>
                       <SelectItem value="all">Barcha holatlar</SelectItem>
                       <SelectItem value="pending">Kutilmoqda</SelectItem>
-                      <SelectItem value="paid">To‘langan</SelectItem>
+                      <SelectItem value="paid">To&apos;langan</SelectItem>
                       <SelectItem value="canceled">Bekor qilingan</SelectItem>
                     </SelectContent>
                   </Select>
@@ -411,10 +410,10 @@ export default function EnhancedOrdersReport() {
                           <TableCell className="text-slate-600">
                             {order.items.reduce((sum, item) => sum + item.quantity, 0)} ta mahsulot
                           </TableCell>
-                          <TableCell className="text-slate-600">{order.subtotal.toLocaleString()} so'm</TableCell>
-                          <TableCell className="text-slate-600">-{order.discount.toLocaleString()} so'm</TableCell>
+                          <TableCell className="text-slate-600">{order.subtotal.toLocaleString()} so&apos;m</TableCell>
+                          <TableCell className="text-slate-600">-{order.discount.toLocaleString()} so&apos;m</TableCell>
                           <TableCell className="font-semibold text-slate-900">
-                            {order.total.toLocaleString()} so'm
+                            {order.total.toLocaleString()} so&apos;m
                           </TableCell>
                           <TableCell>{getStatusBadge(order.status)}</TableCell>
                         </TableRow>

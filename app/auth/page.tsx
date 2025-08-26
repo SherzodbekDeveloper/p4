@@ -174,7 +174,7 @@ export default function AuthPage() {
                 <a href="/oferta" target="_blank" className="text-blue-600 underline" rel="noreferrer">
                   Oferta shartnomasini
                 </a>{" "}
-                o‘qib chiqdim va qabul qilaman
+                o&apos;qib chiqdim va qabul qilaman
               </label>
             </div>
           )}
@@ -205,7 +205,7 @@ export default function AuthPage() {
             </>
           ) : (
             <>
-              Akkaunt yo‘qmi?{" "}
+              Akkaunt yo&apos;qmi?{" "}
               <button
                 type="button"
                 onClick={() => {
@@ -214,7 +214,7 @@ export default function AuthPage() {
                 }}
                 className="text-blue-600 underline"
               >
-                Ro'yxatdan o'tish
+                Ro&apos;yxatdan o&apos;tish
               </button>
             </>
           )}

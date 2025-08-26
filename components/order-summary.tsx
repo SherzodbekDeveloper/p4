@@ -56,8 +56,8 @@ export function OrderSummary({
                 />
               </svg>
             </div>
-            <p className="text-gray-500 text-sm">Savatcha bo'sh</p>
-            <p className="text-gray-400 text-xs mt-1">Mahsulot qo'shish uchun mahsulotni tanlang</p>
+            <p className="text-gray-500 text-sm">Savatcha bo&apos;sh</p>
+            <p className="text-gray-400 text-xs mt-1">Mahsulot qo&apos;shish uchun mahsulotni tanlang</p>
           </div>
         ) : (
           <div className="space-y-4">
@@ -116,7 +116,7 @@ export function OrderSummary({
             <span className="font-medium">{itemCount} ta</span>
           </div>
           <div className="flex justify-between text-lg font-semibold">
-            <span>Jami to'lov:</span>
+            <span>Jami to&apos;lov:</span>
             <span>{formatCurrency(total)}</span>
           </div>
         </div>
